@@ -37,12 +37,13 @@ Explore all ArpitStack projects on GitHub: [ArpitStack GitHub](https://github.co
 
 Below are some of my **sole-contribution projects** that are freely available for the world to use:
 
-| Project | Description | Link |
-|:--------|:-----------|:-----|
+| Project        | Description                                                                                       | Link                                                   |
+|:---------------|:--------------------------------------------------------------------------------------------------|:-------------------------------------------------------|
 | **SecretStack** | An intelligent, real-time code scanner for VSCode workspaces, identifying exposed secrets like API keys, tokens, and sensitive data. With customizable detection, real-time alerts, and detailed reports, SecretStack secures your code before it reaches Git. | [SecretStack](https://github.com/ArpitStack/secret-stack) |
-| **CloudStack** | A unified CLI tool to configure, manage, and validate cloud credentials across AWS, GCP, Azure, and OCI—seamlessly and efficiently. | [CloudStack](https://github.com/ArpitStack/cloud-stack) |
-| **VaultStack** | A secure, encrypted password manager designed to store all types of passwords safely, featuring a stunning design and user-friendly functionality. | [VaultStack](https://github.com/ArpitStack/vault-stack) |
-| **ScaleStack** | An elastic web application that dynamically scales EC2 instances based on real-time user traffic, ensuring high availability and seamless performance during peak demand. | [ScaleStack](https://github.com/ArpitStack/scale-stack) |
+| **CloudStack**  | A unified CLI tool to configure, manage, and validate cloud credentials across AWS, GCP, Azure, and OCI—seamlessly and efficiently. | [CloudStack](https://github.com/ArpitStack/cloud-stack) |
+| **VaultStack**  | A secure, encrypted password manager designed to store all types of passwords safely, featuring a stunning design and user-friendly functionality. | [VaultStack](https://github.com/ArpitStack/vault-stack) |
+| **ScaleStack**  | An elastic web application that dynamically scales EC2 instances based on real-time user traffic, ensuring high availability and seamless performance during peak demand. | [ScaleStack](https://github.com/ArpitStack/scale-stack) |
+| **CheatStack**  | A comprehensive cheatsheet tool for developers and DevOps professionals, providing quick access to handy commands and tips for Git, Docker, Kubernetes, Cloud platforms, and more. | [CheatStack](https://github.com/ArpitStack/cheat-stack) |
 
 
 ### 🌟 Notable Contributions
