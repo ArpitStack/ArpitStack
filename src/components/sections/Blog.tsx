@@ -3,6 +3,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Button } from "@/components/ui/button"
 import { ArrowUpRight, BookOpen, Clock } from "lucide-react"
 import { motion } from "framer-motion"
+import { Badge } from "@/components/ui/badge"
 
 interface BlogPost {
   id: number
@@ -15,6 +16,10 @@ interface BlogPost {
   reading_time_minutes: number
 }
 
+/**
+ * Blog section component.
+ * Dynamically fetches and displays the latest articles from Dev.to.
+ */
 export function Blog() {
   const [posts, setPosts] = useState<BlogPost[]>([])
   const [loading, setLoading] = useState(true)
@@ -127,10 +132,3 @@ export function Blog() {
   )
 }
 
-function Badge({ children, className }: { children: React.ReactNode, className?: string }) {
-    return (
-        <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold ${className}`}>
-            {children}
-        </span>
-    )
-}

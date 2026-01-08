@@ -3,6 +3,10 @@ import { ArrowRight, Github, Linkedin, ExternalLink } from "lucide-react"
 import { motion } from "framer-motion"
 import { GitHubAchievements } from "@/components/ui/github-achievements"
 
+/**
+ * Hero section component for the portfolio.
+ * Displays the introduction, holographic system core, and key call-to-action buttons.
+ */
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
@@ -54,9 +58,15 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="flex flex-wrap gap-4 items-center justify-center md:justify-start"
             >
-              <Button size="lg" className="group rounded-2xl px-8 h-14 text-md font-bold shadow-xl shadow-primary/20 hover:shadow-primary/30 transition-all">
-                Core Innovations
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <Button 
+                size="lg" 
+                className="group rounded-2xl px-8 h-14 text-md font-bold shadow-xl shadow-primary/20 hover:shadow-primary/30 transition-all"
+                asChild
+              >
+                <a href="#work">
+                  Core Innovations
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </a>
               </Button>
               <div className="flex gap-3">
                 <Button variant="outline" size="icon" className="rounded-2xl w-14 h-14 border-slate-200 bg-white/50 backdrop-blur-sm hover:border-primary/50 transition-colors" asChild>
@@ -65,7 +75,7 @@ export function Hero() {
                   </a>
                 </Button>
                 <Button variant="outline" size="icon" className="rounded-2xl w-14 h-14 border-slate-200 bg-white/50 backdrop-blur-sm hover:border-primary/50 transition-colors" asChild>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                  <a href="https://linkedin.com/in/ArpitStack" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="h-6 w-6 text-blue-600" />
                   </a>
                 </Button>
@@ -188,6 +198,37 @@ export function Hero() {
             </div>
           </motion.div>
         </div>
+      </div>
+
+      {/* Dynamic Circuitry Background Overlay */}
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-30">
+        <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 1000 1000" preserveAspectRatio="none">
+          <motion.path
+            d="M 100,0 L 100,200 L 200,300 L 200,500 L 300,600"
+            fill="none"
+            stroke="url(#circuit-grad)"
+            strokeWidth="0.5"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ pathLength: 1, opacity: 0.2 }}
+            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+          />
+          <motion.path
+            d="M 900,1000 L 900,800 L 800,700 L 800,500 L 700,400"
+            fill="none"
+            stroke="url(#circuit-grad)"
+            strokeWidth="0.5"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ pathLength: 1, opacity: 0.2 }}
+            transition={{ duration: 4, delay: 2, repeat: Infinity, ease: "linear" }}
+          />
+          <defs>
+            <linearGradient id="circuit-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="var(--primary)" stopOpacity="0.2" />
+              <stop offset="50%" stopColor="var(--primary)" stopOpacity="0.8" />
+              <stop offset="100%" stopColor="var(--primary)" stopOpacity="0.2" />
+            </linearGradient>
+          </defs>
+        </svg>
       </div>
     </section>
   )

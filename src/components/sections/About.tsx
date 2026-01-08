@@ -1,26 +1,30 @@
 import { useEffect, useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Globe, Terminal, Github } from "lucide-react"
+import { Globe, Terminal, Github, Cloud, Layers } from "lucide-react"
 import { motion } from "framer-motion"
 
 const techStack = [
-  { name: "JavaScript", icon: <code className="text-yellow-400 group-hover:text-yellow-300">JS</code> },
-  { name: "Python", icon: <code className="text-blue-400 group-hover:text-blue-300">PY</code> },
-  { name: "Java", icon: <code className="text-red-400 group-hover:text-red-300">JV</code> },
-  { name: "Golang", icon: <code className="text-cyan-400 group-hover:text-cyan-300">GO</code> },
-  { name: "Docker", icon: <code className="text-blue-500 group-hover:text-blue-400">DK</code> },
-  { name: "Kubernetes", icon: <code className="text-blue-600 group-hover:text-blue-500">K8</code> },
-  { name: "AWS", icon: <code className="text-orange-400 group-hover:text-orange-300">AW</code> },
-  { name: "GCP", icon: <code className="text-red-500 group-hover:text-red-400">GC</code> },
-  { name: "Azure", icon: <code className="text-blue-400 group-hover:text-blue-300">AZ</code> },
-  { name: "Kafka", icon: <code className="text-gray-400 group-hover:text-gray-300">KF</code> },
-  { name: "Hadoop", icon: <code className="text-yellow-600 group-hover:text-yellow-500">HD</code> },
-  { name: "Selenium", icon: <code className="text-green-500 group-hover:text-green-400">SL</code> },
-  { name: "Chromium", icon: <code className="text-blue-400 group-hover:text-blue-300">CH</code> },
-  { name: "Git", icon: <code className="text-orange-600 group-hover:text-orange-500">GT</code> },
-  { name: "VSCode", icon: <code className="text-blue-500 group-hover:text-blue-400">VC</code> }
+  { name: "JavaScript", icon: <span className="bg-yellow-400 text-black px-1 rounded font-bold">JS</span> },
+  { name: "Python", icon: <span className="bg-blue-600 text-white px-1 rounded font-bold">PY</span> },
+  { name: "Java", icon: <span className="bg-red-600 text-white px-1 rounded font-bold">JV</span> },
+  { name: "Golang", icon: <span className="bg-cyan-500 text-white px-1 rounded font-bold">GO</span> },
+  { name: "Docker", icon: <span className="p-1"><Cloud className="w-full h-full" /></span> },
+  { name: "Kubernetes", icon: <span className="p-1"><Layers className="w-full h-full" /></span> },
+  { name: "AWS", icon: <span className="bg-orange-500 text-white px-1 rounded font-black">AWS</span> },
+  { name: "GCP", icon: <span className="bg-blue-500 text-white px-1 rounded font-black">GCP</span> },
+  { name: "Azure", icon: <span className="bg-blue-400 text-white px-1 rounded font-black">AZ</span> },
+  { name: "Kafka", icon: <span className="bg-slate-800 text-white px-1 rounded font-bold">KF</span> },
+  { name: "Hadoop", icon: <span className="bg-yellow-600 text-black px-1 rounded font-bold">HD</span> },
+  { name: "Selenium", icon: <span className="bg-green-600 text-white px-1 rounded font-bold">SL</span> },
+  { name: "Chromium", icon: <span className="bg-blue-400 text-white px-1 rounded font-bold">CH</span> },
+  { name: "Git", icon: <Github className="w-full h-full" /> },
+  { name: "VSCode", icon: <span className="bg-blue-600 text-white px-1 rounded font-bold">VS</span> }
 ]
 
+/**
+ * About section component.
+ * Showcases technical philosophy, tech stack cluster, and dynamic GitHub statistics.
+ */
 export function About() {
   const [githubStats, setGithubStats] = useState({
     followers: 0,
@@ -29,18 +33,33 @@ export function About() {
   })
 
   useEffect(() => {
+    // Fetch User Stats
     fetch("https://api.github.com/users/ArpitStack")
       .then(res => res.json())
       .then(data => {
-        if(data.followers) {
+        if(data.followers !== undefined) {
             setGithubStats(prev => ({
                 ...prev,
-                followers: data.followers,
-                public_repos: data.public_repos
+                followers: data.followers || 0,
+                public_repos: data.public_repos || 0
             }))
         }
       })
       .catch(err => console.error("Failed to fetch Github stats", err))
+
+    // Fetch Star Counts from Repos (Estimate)
+    fetch("https://api.github.com/users/ArpitStack/repos?per_page=100")
+      .then(res => res.json())
+      .then(repos => {
+        if (Array.isArray(repos)) {
+          const totalStars = repos.reduce((acc, repo) => acc + (repo.stargazers_count || 0), 0);
+          setGithubStats(prev => ({
+            ...prev,
+            stars: totalStars
+          }));
+        }
+      })
+      .catch(err => console.error("Failed to fetch repository stars", err));
   }, [])
 
   return (

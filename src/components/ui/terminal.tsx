@@ -37,11 +37,33 @@ const COMMANDS: Record<string, string | string[]> = {
     "Resolution: Premium Aesthetic 4K",
     "Focus: Frontend, Backend, GenAI, System Design, Security, Cloud",
   ],
-  secretstack: "Scanning... [||||||||||] 100% - No secrets exposed. Safe to commit!",
-  cloudstack: "Connecting to AWS/GCP/Azure... Credentials validated. Multi-cloud sync active.",
-  contact: "Email: arpitstack@gmail.com | GitHub: ArpitStack | LinkedIn: ArpitStack",
+  secretstack: [
+    "Initializing ArpitStack Security Engine v2.4...",
+    "Scanning project configuration...",
+    "Analyzing AST for sensitive patterns...",
+    "[██████████] 100% COMPLETE",
+    "--------------------------------------",
+    "RESULT: 0 EXPOSED SECRETS FOUND",
+    "STATUS: SECURE",
+    "RECOMMENDATION: Safe to commit!",
+  ],
+  cloudstack: [
+    "Establishing secure tunnel to multi-cloud VPC...",
+    "Checking parity for AWS, GCP, and Azure configurations...",
+    "SUCCESS: Multi-cloud sync synchronized with 14ms latency.",
+  ],
+  contact: [
+    "Reach out via encrypted channels:",
+    "  - Email: arpitstack@gmail.com",
+    "  - GitHub: github.com/ArpitStack",
+    "  - LinkedIn: linkedin.com/in/ArpitStack",
+  ],
 }
 
+/**
+ * Interactive Terminal component.
+ * Allows users to explore ArpitStack through a CLI interface.
+ */
 export function Terminal({ onClose }: TerminalProps) {
   const [input, setInput] = useState("")
   const [history, setHistory] = useState<string[]>(["Welcome to ArpitStack CLI v1.1", 'Type "help" to see available commands.'])
@@ -118,9 +140,10 @@ export function Terminal({ onClose }: TerminalProps) {
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            className="flex-grow bg-transparent border-none outline-none text-slate-900 caret-primary font-bold"
+            className="flex-grow bg-transparent border-none outline-none text-slate-900 caret-transparent font-bold"
             placeholder=""
           />
+          {input === "" && <motion.div animate={{ opacity: [1, 0] }} transition={{ repeat: Infinity, duration: 0.8 }} className="w-2.5 h-5 bg-primary" />}
         </form>
       </div>
     </motion.div>

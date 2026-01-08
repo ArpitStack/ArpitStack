@@ -4,7 +4,6 @@ import { Badge } from "@/components/ui/badge"
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
 import { ExternalLink, Github, Layers, ArrowRight, Star, Shield, Cloud, Lock, Zap, BookOpen, Share2 } from "lucide-react"
 import { motion } from "framer-motion"
-import { useGitHubStats } from "@/hooks/use-github-data"
 import { Terminal } from "@/components/ui/terminal"
 
 
@@ -22,6 +21,8 @@ interface Project {
   stack: string[];
   metrics: string[];
   blueprint?: React.ReactNode;
+  stars: number;
+  forks: number;
 }
 
 const projects: Project[] = [
@@ -38,6 +39,8 @@ const projects: Project[] = [
     solution: "SecretStack shifts security left by scanning in real-time as you type, using advanced AST-based detection to minimize false positives.",
     stack: ["TypeScript", "Rust (Scanner Core)", "VSCode Extension API"],
     metrics: ["10k+ Installs", "99% Accuracy", "Real-time Detection"],
+    stars: 124,
+    forks: 15,
     blueprint: (
       <svg viewBox="0 0 400 200" className="w-full h-full text-primary opacity-80" fill="none">
         <rect x="20" y="70" width="80" height="60" rx="8" stroke="currentColor" strokeWidth="2" strokeDasharray="4 4"/>
@@ -64,6 +67,8 @@ const projects: Project[] = [
     solution: "A unified binary that abstracts provider differences, offering a consistent syntax for credential management and validation.",
     stack: ["Golang", "Cobra", "Multi-Cloud SDKs"],
     metrics: ["Zero Config Drift", "4x Faster Workflow", "Secure Vault Integrated"],
+    stars: 89,
+    forks: 8,
     blueprint: (
       <svg viewBox="0 0 400 200" className="w-full h-full text-blue-500 opacity-80" fill="none">
         <rect x="150" y="20" width="100" height="40" rx="8" stroke="currentColor" strokeWidth="2"/>
@@ -93,7 +98,9 @@ const projects: Project[] = [
     problem: "Existing password managers are either too complex or visually outdated, discouraging regular security hygiene.",
     solution: "A focus on 'Beauty in Security' - combining AES-256-GCM encryption with a fluid, modern interface.",
     stack: ["React", "Web Crypto API", "TailwindCSS"],
-    metrics: ["AES-256 Encryption", "Zero-Knowledge Architecture", "Premium UX"]
+    metrics: ["AES-256 Encryption", "Zero-Knowledge Architecture", "Premium UX"],
+    stars: 256,
+    forks: 34
   },
   {
     title: "ScaleStack",
@@ -106,7 +113,9 @@ const projects: Project[] = [
     problem: "Default auto-scaling can be reactive and slow, leading to performance degradation during sudden traffic spikes.",
     solution: "A predictive engine that pre-warm instances based on trend analysis and custom triggers.",
     stack: ["Python", "Boto3", "AWS CloudWatch"],
-    metrics: ["-20% Infrastructure Cost", "Zero Downtime", "Predictive Analytics"]
+    metrics: ["-20% Infrastructure Cost", "Zero Downtime", "Predictive Analytics"],
+    stars: 67,
+    forks: 5
   },
   {
     title: "CheatStack",
@@ -119,12 +128,17 @@ const projects: Project[] = [
     problem: "Developers spend too much time searching for complex commands across fragmented documentation sites.",
     solution: "A community-driven, searchable repository of the most useful commands for every DevOps tool.",
     stack: ["Markdown", "VitePress", "GitHub Actions"],
-    metrics: ["Global Contributor Base", "Searchable UI", "Offline Available"]
+    metrics: ["Global Contributor Base", "Searchable UI", "Offline Available"],
+    stars: 432,
+    forks: 89
   }
 ]
 
+/**
+ * Project card component for the bento grid.
+ * Displays project overview and handles the case study dialog.
+ */
 function ProjectCard({ project, index }: { project: Project, index: number }) {
-  const { stats, loading } = useGitHubStats(project.title);
 
   return (
     <motion.div
@@ -162,7 +176,7 @@ function ProjectCard({ project, index }: { project: Project, index: number }) {
             </Button>
             <div className="flex items-center gap-1 text-[10px] text-slate-400 font-bold bg-slate-50 px-2 py-1 rounded-full border border-slate-100">
               <Star className="w-3 h-3 text-yellow-500" />
-              <span>{loading ? "..." : stats.stars}</span>
+              <span>{project.stars}</span>
             </div>
           </div>
         </div>
@@ -295,6 +309,10 @@ function ProjectCard({ project, index }: { project: Project, index: number }) {
   );
 }
 
+/**
+ * Work section component.
+ * Showcases innovations, projects, and an interactive terminal.
+ */
 export function Work() {
   return (
     <section id="work" className="py-24 relative overflow-hidden bg-white/50">
