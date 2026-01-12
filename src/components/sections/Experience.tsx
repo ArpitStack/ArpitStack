@@ -4,42 +4,68 @@ import { motion } from "framer-motion"
 
 const experiences = [
   {
-    title: "Senior Technical Lead",
-    company: "ThalesGroup (Digital Identity & Security)",
+    title: "Technical Lead",
+    company: "SYMX.AI",
     period: "Jan 2025 - Present",
-    description: "Leading the architectural evolution of security-first developer tools and cloud-native plugins.",
+    description: "Leading the architectural evolution of security-first developer tools and cloud-native platforms including X-Radar and X-Sanity.",
     skills: ["Cloud Security", "Distributed Systems", "AuthN/AuthZ", "Go", "Kubernetes"],
     color: "from-blue-500/20 to-cyan-500/20",
     metrics: [
-      "Engineered CSM-SSO-Plugin scaling to 500k+ enterprise users.",
-      "Reduced secret exposure risk by 70% via automated scanning integration.",
-      "Architected low-latency microservices handling 10k+ requests/sec."
+      "Architected X-Radar: A unified monitoring platform for firmware and sensor streams.",
+      "Engineered X-Sanity: Automated sanity testing pipeline for distributed architectures.",
+      "Reduced secret exposure risk by 70% via automated scanning integration."
     ]
   },
   {
-    title: "Full Stack Engineer & Open Source Lead",
-    company: "ArpitStack Collective",
-    period: "Jan 2022 - Dec 2024",
-    description: "Founded and scaled the ArpitStack open-source collective, building tools used by 10k+ developers.",
-    skills: ["TypeScript", "Rust", "AWS", "Infrastructure as Code", "Python"],
-    color: "from-purple-500/20 to-pink-500/20",
+    title: "Senior Software Engineer",
+    company: "Thales",
+    period: "Jun 2021 - Jan 2025",
+    description: "Developing robust digital identity and security solutions, including enterprise SSO automation tools.",
+    skills: ["TypeScript", "Security", "Azure", "Node.js", "Cryptography"],
+    color: "from-indigo-500/20 to-blue-500/20",
     metrics: [
-      "Built SecretStack: 10k+ VSCode installs with 4.9/5 star rating.",
-      "Developed CloudStack CLI, reducing provider context-switching by 60%.",
-      "Mentored 20+ contributors across various open-source initiatives."
+      "Engineered CSM-SSO-Plugin scaling to 500k+ enterprise users.",
+      "Integrated complex security protocols into enterprise-grade applications.",
+      "Collaborated on digital identity solutions serving millions of users."
     ]
   },
   {
     title: "Software Engineer",
-    company: "Distributed Systems Group",
-    period: "June 2020 - Dec 2021",
-    description: "Focused on high-performance backend systems and automated infrastructure orchestration.",
-    skills: ["Java", "Kafka", "Docker", "GCP", "Microservices"],
-    color: "from-orange-500/20 to-red-500/20",
+    company: "TurnKey Solutions",
+    period: "Nov 2020 - May 2021",
+    description: "Building scalable web solutions and enterprise software with a focus on remote collaboration.",
+    skills: ["Full Stack", "React", "Node.js", "Remote Tech", "Agile"],
+    color: "from-emerald-500/20 to-teal-500/20",
     metrics: [
-      "Optimized data pipeline throughput by 40% using Apache Kafka.",
-      "Implemented automated CI/CD reducing deployment time by 50%.",
-      "Architected elastic scaling engine for EC2 instances using Python."
+      "Developed key features for enterprise software suites.",
+      "Streamlined development workflows in a fully remote environment.",
+      "Contributed to high-impact projects reaching global markets."
+    ]
+  },
+  {
+    title: "Member of Technical Staff",
+    company: "LambdaTest",
+    period: "Nov 2019 - Oct 2020",
+    description: "Engineering core testing infrastructure and automation tools for cross-browser compatibility.",
+    skills: ["Test Automation", "Infrastrucure", "Groovy", "CI/CD", "Quality Ops"],
+    color: "from-orange-500/20 to-amber-500/20",
+    metrics: [
+      "Integrated GEB tunnel framework for enhanced browser testing capabilities.",
+      "Optimized cloud-based testing infrastructure for performance and reliability.",
+      "Built tools used by thousands of QA engineers globally."
+    ]
+  },
+  {
+    title: "Associate Software Engineer",
+    company: "CGI",
+    period: "Jan 2018 - Oct 2019",
+    description: "Starting professional career with enterprise software development and business consulting.",
+    skills: ["Java", "SQL", "Enterprise Patterns", "SDLC", "Support"],
+    color: "from-slate-500/20 to-gray-500/20",
+    metrics: [
+      "Assisted in development of large-scale enterprise systems.",
+      "Resolved critical bugs and improved system stability for banking clients.",
+      "Mastered technical foundations across the full software lifecycle."
     ]
   }
 ]

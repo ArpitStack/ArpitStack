@@ -2,7 +2,7 @@ import React from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
-import { ExternalLink, Github, Layers, ArrowRight, Star, Shield, Cloud, Lock, Zap, BookOpen, Share2 } from "lucide-react"
+import { ExternalLink, Github, Layers, ArrowRight, Star, Shield, Cloud, Lock, Zap, Share2, CheckCircle2 } from "lucide-react"
 import { motion } from "framer-motion"
 import { Terminal } from "@/components/ui/terminal"
 
@@ -27,110 +27,94 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "SecretStack",
-    subtitle: "Real-time Secret Scanner for VSCode",
-    description: "An intelligent, real-time code scanner for VSCode workspaces, identifying exposed secrets like API keys and tokens before they reach Git.",
-    tags: ["TypeScript", "Security", "VSCode API", "Node.js"],
+    title: "X-Radar",
+    subtitle: "Unified Internal Monitoring Platform",
+    description: "Single-handedly designed and built a unified internal monitoring platform for SymX.AI, providing real-time visibility across firmware, software, data pipelines, and sensor streams.",
+    tags: ["Monitoring", "Real-time", "SymX.AI", "Go"],
+    icon: <Zap className="w-8 h-8 text-yellow-500" />,
+    github: "https://github.com/ArpitStack/x-radar",
+    gridSize: "md:col-span-2 md:row-span-2",
+    problem: "Fragmented monitoring across different engineering teams led to slower debugging and decision-making.",
+    solution: "A unified platform supporting live Airflow tracking, sensor diagnostics, and on-the-fly anomaly detection.",
+    stack: ["Go", "React", "Kafka", "Airflow"],
+    metrics: ["Unified Visibility", "Faster Debugging", "Real-time Diagnostics"],
+    stars: 156,
+    forks: 22
+  },
+  {
+    title: "X-Sanity",
+    subtitle: "Automated Sanity Testing Pipeline",
+    description: "Distributed sanity testing framework for SymX.AI infrastructure, Ensuring system integrity across firmware and cloud layers.",
+    tags: ["Testing", "DevOps", "SymX.AI", "Python"],
+    icon: <CheckCircle2 className="w-8 h-8 text-green-500" />,
+    github: "https://github.com/ArpitStack/x-sanity",
+    gridSize: "md:col-span-1 md:row-span-1",
+    problem: "Manual sanity checks for complex hardware-software integrations were slow and prone to human error.",
+    solution: "An automated pipeline that triggers on deployment, validating core functionality across the entire stack.",
+    stack: ["Python", "Docker", "AWS", "Jenkins"],
+    metrics: ["100% Core Coverage", "Rapid Validation", "Hardware-in-Loop"],
+    stars: 92,
+    forks: 14
+  },
+  {
+    title: "CSM SSO Plugin",
+    subtitle: "Enterprise SSO Automation (Thales)",
+    description: "Automates Single Sign-On (SSO) setup between CipherTrust Manager and Akeyless, developed during my tenure at Thales.",
+    tags: ["Security", "SSO", "Thales", "Chrome Extension"],
+    icon: <Lock className="w-8 h-8 text-blue-500" />,
+    github: "https://github.com/ArpitStack/csm-sso-plugin",
+    gridSize: "md:col-span-1 md:row-span-2",
+    problem: "Manual SSO configuration between security platforms was error-prone and time-consuming.",
+    solution: "A browser plugin that automates the setup with minimal configuration, ensuring secure and seamless access.",
+    stack: ["JavaScript", "Chrome DevTools API", "Go"],
+    metrics: ["500k+ Users", "Zero Config Errors", "Seamless Integration"],
+    stars: 89,
+    forks: 12
+  },
+  {
+    title: "SecretStack for VSCode",
+    subtitle: "Real-time Secret Scanner",
+    description: "Open-sourced VS Code extension that scans projects for sensitive information like API keys and tokens to prevent exposure.",
+    tags: ["Security", "VSCode", "Open Source", "Go"],
     icon: <Shield className="w-8 h-8 text-red-500" />,
     github: "https://github.com/ArpitStack/secret-stack",
-    demo: "https://marketplace.visualstudio.com/items?itemName=ArpitStack.secret-stack",
-    gridSize: "md:col-span-2 md:row-span-2",
-    problem: "Accidental credential exposure is the #1 cause of cloud breaches. Standard tools are often too slow or run too late in the CI/CD pipeline.",
-    solution: "SecretStack shifts security left by scanning in real-time as you type, using advanced AST-based detection to minimize false positives.",
-    stack: ["TypeScript", "Rust (Scanner Core)", "VSCode Extension API"],
-    metrics: ["10k+ Installs", "99% Accuracy", "Real-time Detection"],
-    stars: 124,
-    forks: 15,
-    blueprint: (
-      <svg viewBox="0 0 400 200" className="w-full h-full text-primary opacity-80" fill="none">
-        <rect x="20" y="70" width="80" height="60" rx="8" stroke="currentColor" strokeWidth="2" strokeDasharray="4 4"/>
-        <text x="60" y="105" textAnchor="middle" fill="currentColor" fontSize="10" className="font-mono">Editor</text>
-        <path d="M100 100 L150 100" stroke="currentColor" strokeWidth="2" markerEnd="url(#arrow)"/>
-        <rect x="150" y="50" width="100" height="100" rx="12" stroke="currentColor" strokeWidth="2" className="animate-pulse"/>
-        <text x="200" y="105" textAnchor="middle" fill="currentColor" fontSize="12" fontWeight="bold">Scanner Core</text>
-        <path d="M250 100 L300 100" stroke="currentColor" strokeWidth="2" markerEnd="url(#arrow)"/>
-        <circle cx="330" cy="100" r="30" stroke="currentColor" strokeWidth="2" strokeDasharray="2 2"/>
-        <text x="330" y="105" textAnchor="middle" fill="currentColor" fontSize="10">Alerts</text>
-        <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L0,10 L10,5 Z" fill="currentColor"/></marker></defs>
-      </svg>
-    )
+    gridSize: "md:col-span-1 md:row-span-1",
+    problem: "Developers inadvertently commit secrets to repositories, leading to severe security breaches.",
+    solution: "A real-time scanner that identifies and locks down secrets before they are committed, with easy manual triggers.",
+    stack: ["Go", "VSCode Extension API"],
+    metrics: ["10k+ Installs", "High Accuracy", "Open Source"],
+    stars: 245,
+    forks: 48
   },
   {
     title: "CloudStack",
-    subtitle: "Unified Multi-Cloud CLI",
-    description: "Seamlessly manage and validate cloud credentials across AWS, GCP, Azure, and OCI from a single, high-performance interface.",
-    tags: ["Go", "Cloud", "CLI", "Security"],
-    icon: <Cloud className="w-8 h-8 text-blue-500" />,
+    subtitle: "All-In-One Multi-Cloud CLI",
+    description: "Work on multi-clouds through a single CLI with no prior installation required, streamlining cloud operations.",
+    tags: ["Cloud", "CLI", "Multi-Cloud", "Go"],
+    icon: <Cloud className="w-8 h-8 text-indigo-500" />,
     github: "https://github.com/ArpitStack/cloudstack",
-    gridSize: "md:col-span-1 md:row-span-2",
-    problem: "Context switching between multiple cloud CLIs is cumbersome and leads to configuration drift and security gaps.",
-    solution: "A unified binary that abstracts provider differences, offering a consistent syntax for credential management and validation.",
-    stack: ["Golang", "Cobra", "Multi-Cloud SDKs"],
-    metrics: ["Zero Config Drift", "4x Faster Workflow", "Secure Vault Integrated"],
-    stars: 89,
-    forks: 8,
-    blueprint: (
-      <svg viewBox="0 0 400 200" className="w-full h-full text-blue-500 opacity-80" fill="none">
-        <rect x="150" y="20" width="100" height="40" rx="8" stroke="currentColor" strokeWidth="2"/>
-        <text x="200" y="45" textAnchor="middle" fill="currentColor" fontSize="12" fontWeight="bold">CloudStack CLI</text>
-        <path d="M200 60 L200 100" stroke="currentColor" strokeWidth="2"/>
-        <path d="M100 100 L300 100" stroke="currentColor" strokeWidth="2"/>
-        <path d="M100 100 L100 140" stroke="currentColor" strokeWidth="2"/>
-        <path d="M200 100 L200 140" stroke="currentColor" strokeWidth="2"/>
-        <path d="M300 100 L300 140" stroke="currentColor" strokeWidth="2"/>
-        <rect x="70" y="140" width="60" height="30" rx="4" stroke="currentColor" strokeWidth="1"/>
-        <text x="100" y="160" textAnchor="middle" fill="currentColor" fontSize="8">AWS</text>
-        <rect x="170" y="140" width="60" height="30" rx="4" stroke="currentColor" strokeWidth="1"/>
-        <text x="200" y="160" textAnchor="middle" fill="currentColor" fontSize="8">GCP</text>
-        <rect x="270" y="140" width="60" height="30" rx="4" stroke="currentColor" strokeWidth="1"/>
-        <text x="300" y="160" textAnchor="middle" fill="currentColor" fontSize="8">Azure</text>
-      </svg>
-    )
-  },
-  {
-    title: "VaultStack",
-    subtitle: "Encrypted Password Manager",
-    description: "A secure, stunningly designed password vault with military-grade encryption for all your sensitive data.",
-    tags: ["React", "Cryptography", "UI/UX"],
-    icon: <Lock className="w-8 h-8 text-purple-500" />,
-    github: "https://github.com/ArpitStack/vaultstack",
     gridSize: "md:col-span-1 md:row-span-1",
-    problem: "Existing password managers are either too complex or visually outdated, discouraging regular security hygiene.",
-    solution: "A focus on 'Beauty in Security' - combining AES-256-GCM encryption with a fluid, modern interface.",
-    stack: ["React", "Web Crypto API", "TailwindCSS"],
-    metrics: ["AES-256 Encryption", "Zero-Knowledge Architecture", "Premium UX"],
-    stars: 256,
-    forks: 34
+    problem: "Managing multiple cloud environments requires switching between various CLI tools and configurations.",
+    solution: "A unified CLI supporting AWS, GCP, and Azure, allowing developers to manage all resources from one place.",
+    stack: ["Go", "AWS SDK", "GCP SDK", "Azure SDK"],
+    metrics: ["Unified Interface", "No Install Reqd", "Fast Operations"],
+    stars: 112,
+    forks: 18
   },
   {
-    title: "ScaleStack",
-    subtitle: "Elastic EC2 Scaling Engine",
-    description: "Dynamically scale EC2 instances based on real-time traffic, ensuring high availability during peak demand peaks.",
-    tags: ["AWS", "Auto-scaling", "Python"],
-    icon: <Zap className="w-8 h-8 text-yellow-500" />,
-    github: "https://github.com/ArpitStack/scalestack",
-    gridSize: "md:col-span-1 md:row-span-1",
-    problem: "Default auto-scaling can be reactive and slow, leading to performance degradation during sudden traffic spikes.",
-    solution: "A predictive engine that pre-warm instances based on trend analysis and custom triggers.",
-    stack: ["Python", "Boto3", "AWS CloudWatch"],
-    metrics: ["-20% Infrastructure Cost", "Zero Downtime", "Predictive Analytics"],
-    stars: 67,
-    forks: 5
-  },
-  {
-    title: "CheatStack",
-    subtitle: "DevOps & Cloud Cheatsheets",
-    description: "Quick access to essential commands for Git, Docker, Kubernetes, and major Cloud platforms.",
-    tags: ["Documentation", "Community", "Open Source"],
-    icon: <BookOpen className="w-8 h-8 text-green-500" />,
-    github: "https://github.com/ArpitStack/cheatstack",
+    title: "GEB Integration",
+    subtitle: "Browser Automation Framework",
+    description: "Integrated LambdaTest tunnel with GEB, an open-source framework based on Groovy for robust web testing.",
+    tags: ["Testing", "Automation", "Groovy", "LambdaTest"],
+    icon: <Layers className="w-8 h-8 text-emerald-500" />,
+    github: "https://github.com/ArpitStack/geb-lambdatest",
     gridSize: "md:col-span-2 md:row-span-1",
-    problem: "Developers spend too much time searching for complex commands across fragmented documentation sites.",
-    solution: "A community-driven, searchable repository of the most useful commands for every DevOps tool.",
-    stack: ["Markdown", "VitePress", "GitHub Actions"],
-    metrics: ["Global Contributor Base", "Searchable UI", "Offline Available"],
-    stars: 432,
-    forks: 89
+    problem: "Cross-browser testing for GEB-based projects lacked seamless tunnel integration with cloud grids.",
+    solution: "An integration layer that simplifies tunnel setup for GEB, enabling easy scaling of browser tests on LambdaTest.",
+    stack: ["Groovy", "LambdaTest API", "GEB"],
+    metrics: ["Official Contributor", "Simplified Testing", "Cloud Scale"],
+    stars: 67,
+    forks: 9
   }
 ]
 
@@ -334,7 +318,7 @@ export function Work() {
               transition={{ delay: 0.1 }}
               className="text-xl text-slate-500 max-w-2xl font-medium"
             >
-              Architecting the next generation of cloud-native developer tools at ArpitStack.
+              Driving innovation across firmware, cloud security, and developer tools.
             </motion.p>
           </div>
           
