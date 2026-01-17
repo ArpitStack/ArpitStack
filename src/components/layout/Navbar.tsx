@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { Menu, Github, Linkedin, Mail } from "lucide-react";
+import { Menu, Github, Linkedin, Mail, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { ModeToggle } from "@/components/mode-toggle";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -56,11 +57,17 @@ export function Navbar() {
               {link.name}
             </a>
           ))}
-          <div className="flex items-center gap-4 border-l pl-6 ml-2 border-border/50">
-             <a href="https://github.com/ArpitStack" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors"><Github size={20} /></a>
-             <a href="https://www.linkedin.com/in/ArpitStack" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors"><Linkedin size={20} /></a>
+          <div className="flex items-center gap-2 border-l pl-4 ml-2 border-border/50">
+             <ModeToggle />
+             <a href="https://github.com/ArpitStack" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors"><Github size={18} /></a>
+             <a href="https://www.linkedin.com/in/ArpitStack" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors"><Linkedin size={18} /></a>
           </div>
-          <Button size="sm" className="ml-4">Get in Touch</Button>
+          <Button size="sm" className="ml-3 rounded-xl" asChild>
+            <a href="/resume.pdf" download>
+              <Download className="w-3.5 h-3.5 mr-1.5" />
+              Resume/CV
+            </a>
+          </Button>
         </div>
 
         {/* Mobile Nav */}

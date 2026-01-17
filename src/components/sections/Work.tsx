@@ -28,27 +28,27 @@ interface Project {
 const projects: Project[] = [
   {
     title: "X-Radar",
-    subtitle: "Unified Internal Monitoring Platform",
-    description: "Single-handedly designed and built a unified internal monitoring platform for SymX.AI, providing real-time visibility across firmware, software, data pipelines, and sensor streams.",
-    tags: ["Monitoring", "Real-time", "SymX.AI", "Go"],
-    icon: <Zap className="w-8 h-8 text-yellow-500" />,
-    github: "https://github.com/ArpitStack/x-radar",
-    gridSize: "md:col-span-2 md:row-span-2",
+    subtitle: "Unified Monitoring Platform",
+    description: "Real-time visibility across firmware, software, and sensor streams for SymX.AI.",
+    tags: ["Monitoring", "Anomaly Detection", "Sensors", "Firmware", "Software", "Airflow", "Postgres", "Streamlit", "React", "Node.js", "Python"],
+    icon: <Zap className="w-6 h-6 text-yellow-500" />,
+    github: "https://github.com/symboticware/x-radar",
+    gridSize: "md:col-span-1",
     problem: "Fragmented monitoring across different engineering teams led to slower debugging and decision-making.",
     solution: "A unified platform supporting live Airflow tracking, sensor diagnostics, and on-the-fly anomaly detection.",
-    stack: ["Go", "React", "Kafka", "Airflow"],
+    stack: ["Python", "Streamlit", "React", "Node.js", "Airflow", "Postgres"],
     metrics: ["Unified Visibility", "Faster Debugging", "Real-time Diagnostics"],
     stars: 156,
     forks: 22
   },
   {
     title: "X-Sanity",
-    subtitle: "Automated Sanity Testing Pipeline",
-    description: "Distributed sanity testing framework for SymX.AI infrastructure, Ensuring system integrity across firmware and cloud layers.",
-    tags: ["Testing", "DevOps", "SymX.AI", "Python"],
-    icon: <CheckCircle2 className="w-8 h-8 text-green-500" />,
+    subtitle: "Sanity Testing Pipeline",
+    description: "Automated testing framework ensuring system integrity across firmware and cloud layers.",
+    tags: ["Testing", "DevOps", "Python"],
+    icon: <CheckCircle2 className="w-6 h-6 text-green-500" />,
     github: "https://github.com/ArpitStack/x-sanity",
-    gridSize: "md:col-span-1 md:row-span-1",
+    gridSize: "md:col-span-1",
     problem: "Manual sanity checks for complex hardware-software integrations were slow and prone to human error.",
     solution: "An automated pipeline that triggers on deployment, validating core functionality across the entire stack.",
     stack: ["Python", "Docker", "AWS", "Jenkins"],
@@ -58,12 +58,12 @@ const projects: Project[] = [
   },
   {
     title: "CSM SSO Plugin",
-    subtitle: "Enterprise SSO Automation (Thales)",
-    description: "Automates Single Sign-On (SSO) setup between CipherTrust Manager and Akeyless, developed during my tenure at Thales.",
-    tags: ["Security", "SSO", "Thales", "Chrome Extension"],
-    icon: <Lock className="w-8 h-8 text-blue-500" />,
+    subtitle: "Enterprise SSO Automation",
+    description: "Automates SSO setup between CipherTrust Manager and Akeyless at Thales.",
+    tags: ["Security", "SSO", "Thales"],
+    icon: <Lock className="w-6 h-6 text-blue-500" />,
     github: "https://github.com/ArpitStack/csm-sso-plugin",
-    gridSize: "md:col-span-1 md:row-span-2",
+    gridSize: "md:col-span-1",
     problem: "Manual SSO configuration between security platforms was error-prone and time-consuming.",
     solution: "A browser plugin that automates the setup with minimal configuration, ensuring secure and seamless access.",
     stack: ["JavaScript", "Chrome DevTools API", "Go"],
@@ -72,13 +72,13 @@ const projects: Project[] = [
     forks: 12
   },
   {
-    title: "SecretStack for VSCode",
-    subtitle: "Real-time Secret Scanner",
-    description: "Open-sourced VS Code extension that scans projects for sensitive information like API keys and tokens to prevent exposure.",
-    tags: ["Security", "VSCode", "Open Source", "Go"],
-    icon: <Shield className="w-8 h-8 text-red-500" />,
+    title: "SecretStack",
+    subtitle: "VSCode Secret Scanner",
+    description: "Real-time scanner preventing API keys and tokens from being committed.",
+    tags: ["Security", "VSCode", "Go"],
+    icon: <Shield className="w-6 h-6 text-red-500" />,
     github: "https://github.com/ArpitStack/secret-stack",
-    gridSize: "md:col-span-1 md:row-span-1",
+    gridSize: "md:col-span-1",
     problem: "Developers inadvertently commit secrets to repositories, leading to severe security breaches.",
     solution: "A real-time scanner that identifies and locks down secrets before they are committed, with easy manual triggers.",
     stack: ["Go", "VSCode Extension API"],
@@ -88,12 +88,12 @@ const projects: Project[] = [
   },
   {
     title: "CloudStack",
-    subtitle: "All-In-One Multi-Cloud CLI",
-    description: "Work on multi-clouds through a single CLI with no prior installation required, streamlining cloud operations.",
-    tags: ["Cloud", "CLI", "Multi-Cloud", "Go"],
-    icon: <Cloud className="w-8 h-8 text-indigo-500" />,
+    subtitle: "Multi-Cloud CLI",
+    description: "Unified CLI for AWS, GCP, and Azure with zero installation.",
+    tags: ["Cloud", "CLI", "Go"],
+    icon: <Cloud className="w-6 h-6 text-indigo-500" />,
     github: "https://github.com/ArpitStack/cloudstack",
-    gridSize: "md:col-span-1 md:row-span-1",
+    gridSize: "md:col-span-1",
     problem: "Managing multiple cloud environments requires switching between various CLI tools and configurations.",
     solution: "A unified CLI supporting AWS, GCP, and Azure, allowing developers to manage all resources from one place.",
     stack: ["Go", "AWS SDK", "GCP SDK", "Azure SDK"],
@@ -104,11 +104,11 @@ const projects: Project[] = [
   {
     title: "GEB Integration",
     subtitle: "Browser Automation Framework",
-    description: "Integrated LambdaTest tunnel with GEB, an open-source framework based on Groovy for robust web testing.",
-    tags: ["Testing", "Automation", "Groovy", "LambdaTest"],
-    icon: <Layers className="w-8 h-8 text-emerald-500" />,
+    description: "LambdaTest tunnel integration with GEB for robust cross-browser testing.",
+    tags: ["Testing", "Automation", "Groovy"],
+    icon: <Layers className="w-6 h-6 text-emerald-500" />,
     github: "https://github.com/ArpitStack/geb-lambdatest",
-    gridSize: "md:col-span-2 md:row-span-1",
+    gridSize: "md:col-span-1",
     problem: "Cross-browser testing for GEB-based projects lacked seamless tunnel integration with cloud grids.",
     solution: "An integration layer that simplifies tunnel setup for GEB, enabling easy scaling of browser tests on LambdaTest.",
     stack: ["Groovy", "LambdaTest API", "GEB"],
@@ -126,56 +126,42 @@ function ProjectCard({ project, index }: { project: Project, index: number }) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className={`group bento-card relative flex flex-col justify-between overflow-hidden ${project.gridSize}`}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.4, delay: index * 0.05 }}
+      className={`group relative flex flex-col justify-between overflow-hidden rounded-xl bg-white border border-slate-200/80 p-4 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 ${project.gridSize}`}
     >
-      {/* Blueprint Overlay (Reveals on Hover) */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-all duration-700 ease-in-out bg-white/95">
-        <div className="absolute inset-0 opacity-[0.03] circuit-pattern" />
-        <div className="w-full h-full p-8 flex items-center justify-center scale-90 group-hover:scale-100 transition-transform duration-700">
-           {"blueprint" in project ? project.blueprint : (
-              <div className="text-primary/10 flex flex-col items-center gap-2">
-                <Layers className="w-16 h-16" />
-                <span className="text-[10px] font-black uppercase tracking-[0.3em]">System Data Encrypted</span>
-              </div>
-           )}
-        </div>
-        <div className="absolute bottom-6 right-8 text-[8px] font-black uppercase tracking-[0.5em] text-primary/20">
-          Schematic v{index + 1}.0
-        </div>
-      </div>
-
-      <div className="relative z-10">
-        <div className="flex justify-between items-start mb-4">
-          <div className="p-3 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm group-hover:border-primary/20 group-hover:bg-primary/5 transition-all duration-500">
+      {/* Top Row: Icon + Stars */}
+      <div>
+        <div className="flex justify-between items-start mb-3">
+          <div className="p-2 rounded-xl bg-slate-50 border border-slate-100 group-hover:border-primary/20 group-hover:bg-primary/5 transition-all">
             {project.icon}
           </div>
-          <div className="flex gap-2">
-            <Button variant="ghost" size="icon" className="rounded-full w-8 h-8 opacity-0 group-hover:opacity-100 transition-opacity" asChild>
-              <a href={project.github} target="_blank" rel="noopener noreferrer">
-                <Github className="w-4 h-4" />
-              </a>
-            </Button>
-            <div className="flex items-center gap-1 text-[10px] text-slate-400 font-bold bg-slate-50 px-2 py-1 rounded-full border border-slate-100">
-              <Star className="w-3 h-3 text-yellow-500" />
+          <div className="flex items-center gap-1.5">
+            <a href={project.github} target="_blank" rel="noopener noreferrer" className="p-1.5 rounded-lg hover:bg-slate-100 transition-colors">
+              <Github className="w-3.5 h-3.5 text-slate-400" />
+            </a>
+            <div className="flex items-center gap-1 text-[9px] text-slate-400 font-bold bg-slate-50 px-1.5 py-0.5 rounded-md border border-slate-100">
+              <Star className="w-2.5 h-2.5 text-yellow-500" />
               <span>{project.stars}</span>
             </div>
           </div>
         </div>
         
-        <h3 className="text-2xl font-bold mb-1 text-slate-900 group-hover:text-primary transition-colors">{project.title}</h3>
-        <p className="text-xs text-primary font-black mb-3 uppercase tracking-[0.2em]">{project.subtitle}</p>
-        <p className="text-sm text-slate-500 line-clamp-3 leading-relaxed font-medium">
+        {/* Title + Description */}
+        <h3 className="text-base font-bold text-slate-900 group-hover:text-primary transition-colors leading-tight">{project.title}</h3>
+        <p className="text-[10px] text-primary/70 font-bold mb-2 uppercase tracking-wider">{project.subtitle}</p>
+        <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">
           {project.description}
         </p>
       </div>
 
-      <div className="mt-8 flex items-center justify-between relative z-10">
+      {/* Footer: Tags + Action */}
+      <div className="mt-3 flex items-center justify-between pt-3 border-t border-slate-100">
         <div className="flex gap-1">
           {project.tags.slice(0, 2).map(tag => (
-            <Badge key={tag} className="text-[9px] font-black uppercase tracking-tighter bg-slate-50 border-slate-100 text-slate-400">
+            <Badge key={tag} className="text-[8px] font-bold uppercase tracking-tight bg-slate-50 border-slate-100/80 text-slate-400 px-1.5 py-0">
               {tag}
             </Badge>
           ))}
@@ -183,8 +169,8 @@ function ProjectCard({ project, index }: { project: Project, index: number }) {
         
         <Dialog>
           <DialogTrigger asChild>
-            <Button variant="link" className="p-0 h-auto text-xs font-black text-slate-900 group-hover:text-primary transition-colors tracking-widest">
-              CASE STUDY <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform" />
+            <Button variant="ghost" size="sm" className="p-0 h-auto text-[10px] font-bold text-slate-400 hover:text-primary transition-colors">
+              Details <ArrowRight className="w-3 h-3 ml-1" />
             </Button>
           </DialogTrigger>
           <DialogContent className="max-w-5xl bg-white/95 backdrop-blur-3xl border-slate-100 p-0 overflow-hidden rounded-[3rem] shadow-2xl">
@@ -342,21 +328,21 @@ export function Work() {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 auto-rows-[350px]">
-          {/* Terminal Feature - Large Block */}
-          <div className="md:col-span-2 md:row-span-2 relative group flex flex-col justify-end p-1 overflow-hidden rounded-[3rem] bg-white border border-slate-100 shadow-2xl hover:shadow-primary/5 transition-all duration-500">
-             <div className="absolute top-10 left-10 z-20 pointer-events-none">
-                <Badge variant="outline" className="bg-primary/5 border-primary/20 text-primary mb-6 p-2 px-6 rounded-xl uppercase font-black tracking-widest text-[10px] shadow-sm">ArpitStack CLI v1.1</Badge>
-                <h3 className="text-5xl font-bold tracking-tighter mb-3 text-slate-900 leading-none">Interactive Terminal</h3>
-                <p className="text-slate-500 text-sm font-bold flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                    Secure Sandbox Environment Active
-                </p>
+        {/* Compact Grid Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[200px]">
+          {/* Terminal Feature - Compact */}
+          <div className="sm:col-span-2 lg:col-span-2 lg:row-span-2 relative group flex flex-col justify-between overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 border border-slate-700 shadow-xl hover:shadow-primary/20 transition-all duration-500">
+             <div className="p-5 relative z-20">
+                <div className="flex items-center gap-2 mb-2">
+                  <Badge variant="outline" className="bg-primary/20 border-primary/30 text-primary text-[8px] px-2 py-0.5 rounded-md uppercase font-black tracking-widest">CLI v1.1</Badge>
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                </div>
+                <h3 className="text-xl font-bold tracking-tight text-white leading-tight">Interactive Terminal</h3>
+                <p className="text-slate-400 text-xs font-medium mt-1">Try: help, neofetch, secretstack</p>
              </div>
-             <div className="relative z-10 w-full p-4 lg:p-8">
+             <div className="relative z-10 flex-1 px-3 pb-3">
                 <Terminal />
              </div>
-             <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none" />
           </div>
 
           {projects.map((project, index) => (

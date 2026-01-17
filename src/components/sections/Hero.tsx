@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Github, Linkedin, ExternalLink } from "lucide-react"
+import { ArrowRight, Github, Linkedin, ExternalLink, Download } from "lucide-react"
 import { motion } from "framer-motion"
 import { GitHubAchievements } from "@/components/ui/github-achievements"
 
@@ -16,7 +16,7 @@ export function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.3, delay: 0 }}
             >
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10 mb-4 shadow-sm">
                   <span className="relative flex h-2 w-2">
@@ -30,7 +30,7 @@ export function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
+              transition={{ duration: 0.3, delay: 0.05 }}
             >
               <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9] mb-6 text-slate-900">
                 Hello, I'm <br />
@@ -44,7 +44,7 @@ export function Hero() {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
               className="text-lg text-slate-500 max-w-xl leading-relaxed font-medium"
             >
               Architecting high-performance <span className="text-slate-900">Cloud Infrastructure</span> and 
@@ -55,17 +55,28 @@ export function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex flex-wrap gap-4 items-center justify-center md:justify-start"
+              transition={{ duration: 0.3, delay: 0.15 }}
+              className="flex flex-wrap gap-3 items-center justify-center md:justify-start"
             >
               <Button 
                 size="lg" 
-                className="group rounded-2xl px-8 h-14 text-md font-bold shadow-xl shadow-primary/20 hover:shadow-primary/30 transition-all"
+                className="group rounded-2xl px-6 h-12 text-sm font-bold shadow-xl shadow-primary/20 hover:shadow-primary/30 transition-all"
                 asChild
               >
                 <a href="#work">
-                  Core Innovations
+                  View Projects
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </a>
+              </Button>
+              <Button 
+                variant="outline"
+                size="lg" 
+                className="group rounded-2xl px-6 h-12 text-sm font-bold border-slate-200 bg-white/80 backdrop-blur-sm hover:border-primary/50 transition-all"
+                asChild
+              >
+                <a href="/resume.pdf" download>
+                  <Download className="mr-2 h-4 w-4" />
+                  Resume
                 </a>
               </Button>
               <div className="flex gap-3">
