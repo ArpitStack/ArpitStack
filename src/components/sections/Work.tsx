@@ -5,6 +5,7 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
 import { ExternalLink, Github, Layers, ArrowRight, Star, Shield, Cloud, Lock, Zap, Share2, CheckCircle2 } from "lucide-react"
 import { motion } from "framer-motion"
 import { Terminal } from "@/components/ui/terminal"
+import { ArchitectureViewer, XRadarHLD, XRadarLLD, CSMSSOPluginHLD, CSMSSOPluginLLD, XSanityHLD } from "@/components/ui/architecture-diagrams"
 
 
 interface Project {
@@ -30,14 +31,15 @@ const projects: Project[] = [
     title: "X-Radar",
     subtitle: "Unified Monitoring Platform",
     description: "Real-time visibility across firmware, software, and sensor streams for SymX.AI.",
-    tags: ["Monitoring", "Anomaly Detection", "Sensors", "Firmware", "Software", "Airflow", "Postgres", "Streamlit", "React", "Node.js", "Python"],
+    tags: ["Monitoring", "Anomaly Detection", "Airflow", "Postgres", "Python"],
     icon: <Zap className="w-6 h-6 text-yellow-500" />,
     github: "https://github.com/symboticware/x-radar",
     gridSize: "md:col-span-1",
     problem: "Fragmented monitoring across different engineering teams led to slower debugging and decision-making.",
     solution: "A unified platform supporting live Airflow tracking, sensor diagnostics, and on-the-fly anomaly detection.",
-    stack: ["Python", "Streamlit", "React", "Node.js", "Airflow", "Postgres"],
-    metrics: ["Unified Visibility", "Faster Debugging", "Real-time Diagnostics"],
+    stack: ["Python", "Streamlit", "AWS", "Athena", "DynamoDB", "PostgreSQL"],
+    metrics: ["14+ Feature Modules", "Real-time Alerts", "Multi-tenant Auth"],
+    blueprint: <ArchitectureViewer hld={<XRadarHLD />} lld={<XRadarLLD />} />,
     stars: 156,
     forks: 22
   },
@@ -45,14 +47,15 @@ const projects: Project[] = [
     title: "X-Sanity",
     subtitle: "Sanity Testing Pipeline",
     description: "Automated testing framework ensuring system integrity across firmware and cloud layers.",
-    tags: ["Testing", "DevOps", "Python"],
+    tags: ["Testing", "DevOps", "Python", "Docker"],
     icon: <CheckCircle2 className="w-6 h-6 text-green-500" />,
     github: "https://github.com/ArpitStack/x-sanity",
     gridSize: "md:col-span-1",
     problem: "Manual sanity checks for complex hardware-software integrations were slow and prone to human error.",
     solution: "An automated pipeline that triggers on deployment, validating core functionality across the entire stack.",
-    stack: ["Python", "Docker", "AWS", "Jenkins"],
-    metrics: ["100% Core Coverage", "Rapid Validation", "Hardware-in-Loop"],
+    stack: ["Python", "Docker", "AWS", "Jenkins", "pytest"],
+    metrics: ["100% Core Coverage", "Parallel Execution", "CI/CD Integration"],
+    blueprint: <ArchitectureViewer hld={<XSanityHLD />} lld={null} />,
     stars: 92,
     forks: 14
   },
@@ -60,14 +63,15 @@ const projects: Project[] = [
     title: "CSM SSO Plugin",
     subtitle: "Enterprise SSO Automation",
     description: "Automates SSO setup between CipherTrust Manager and Akeyless at Thales.",
-    tags: ["Security", "SSO", "Thales"],
+    tags: ["Security", "SSO", "Go", "Chrome Extension"],
     icon: <Lock className="w-6 h-6 text-blue-500" />,
-    github: "https://github.com/ArpitStack/csm-sso-plugin",
+    github: "https://github.com/ThalesGroup/csm-sso-plugin",
     gridSize: "md:col-span-1",
     problem: "Manual SSO configuration between security platforms was error-prone and time-consuming.",
-    solution: "A browser plugin that automates the setup with minimal configuration, ensuring secure and seamless access.",
-    stack: ["JavaScript", "Chrome DevTools API", "Go"],
-    metrics: ["500k+ Users", "Zero Config Errors", "Seamless Integration"],
+    solution: "A browser extension + Go backend that automates JWT auth, access roles, and CSM tile configuration.",
+    stack: ["Go", "JavaScript", "Chrome Extension API", "JWT/JWKS"],
+    metrics: ["500k+ Users", "95% Time Reduction", "12 API Endpoints"],
+    blueprint: <ArchitectureViewer hld={<CSMSSOPluginHLD />} lld={<CSMSSOPluginLLD />} />,
     stars: 89,
     forks: 12
   },
