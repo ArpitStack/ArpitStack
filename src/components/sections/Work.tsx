@@ -5,7 +5,7 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
 import { ExternalLink, Github, Layers, ArrowRight, Star, Shield, Cloud, Lock, Zap, Share2, CheckCircle2 } from "lucide-react"
 import { motion } from "framer-motion"
 import { Terminal } from "@/components/ui/terminal"
-import { ArchitectureViewer, XRadarHLD, XRadarLLD, CSMSSOPluginHLD, CSMSSOPluginLLD, XSanityHLD } from "@/components/ui/architecture-diagrams"
+import { ArchitectureViewer, XRadarHLD, XRadarLLD, CSMSSOPluginHLD, CSMSSOPluginLLD, XSanityHLD, XSanityLLD } from "@/components/ui/architecture-diagrams"
 
 
 interface Project {
@@ -55,7 +55,7 @@ const projects: Project[] = [
     solution: "An automated pipeline that triggers on deployment, validating core functionality across the entire stack.",
     stack: ["Python", "Docker", "AWS", "Jenkins", "pytest"],
     metrics: ["100% Core Coverage", "Parallel Execution", "CI/CD Integration"],
-    blueprint: <ArchitectureViewer hld={<XSanityHLD />} lld={null} />,
+    blueprint: <ArchitectureViewer hld={<XSanityHLD />} lld={<XSanityLLD />} />,
     stars: 92,
     forks: 14
   },

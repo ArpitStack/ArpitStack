@@ -91,7 +91,7 @@ export function XRadarHLD() {
         >
           <div className="font-bold text-[10px] uppercase tracking-wide mb-1 opacity-80">Feature Modules</div>
           <div className="grid grid-cols-4 gap-1">
-            {["DAG Monitor", "Fleet", "Trips", "TPMS", "Lambdas", "Anomalies", "Tracker", "Screenwise"].map(m => (
+            {["DAG Monitor", "Fleet", "Trip Anomalies", "TPMS", "Lambdas", "Tracker", "Sensors"].map(m => (
               <span key={m} className="bg-white/20 px-1.5 py-0.5 rounded text-[8px] text-center">{m}</span>
             ))}
           </div>
@@ -204,11 +204,10 @@ export function XRadarLLD() {
             <div>• dags.py</div>
             <div>• lambdas.py</div>
             <div>• fleet.py</div>
-            <div>• trips.py</div>
+            <div>• anomalies.py</div>
             <div>• tpms.py</div>
             <div>• tracker.py</div>
-            <div>• screenwise.py</div>
-            <div>• anomalies/</div>
+            <div>• sensors.py</div>
           </div>
         </motion.div>
       </div>
@@ -476,3 +475,89 @@ export function XSanityHLD() {
     </div>
   )
 }
+
+export function XSanityLLD() {
+  return (
+    <div className="w-full h-full flex flex-col gap-3 p-4 text-xs overflow-auto">
+      <div className="text-center mb-2">
+        <h4 className="text-sm font-bold text-slate-800">Low-Level Design</h4>
+        <p className="text-[10px] text-slate-500">Test Framework Architecture</p>
+      </div>
+
+      <div className="grid grid-cols-2 gap-2 flex-1">
+        {/* Test Runner */}
+        <motion.div 
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          className="bg-slate-800 rounded-lg p-2 text-white"
+        >
+          <div className="text-[9px] font-bold text-green-400 mb-1">tests/</div>
+          <div className="space-y-1 text-[8px] text-slate-300">
+            <div>• test_firmware.py</div>
+            <div>• test_cloud_api.py</div>
+            <div>• test_integration.py</div>
+            <div>• conftest.py</div>
+          </div>
+        </motion.div>
+
+        {/* Core Modules */}
+        <motion.div 
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 0.1 }}
+          className="bg-slate-800 rounded-lg p-2 text-white"
+        >
+          <div className="text-[9px] font-bold text-blue-400 mb-1">core/</div>
+          <div className="space-y-1 text-[8px] text-slate-300">
+            <div>• orchestrator.py</div>
+            <div>• executor.py</div>
+            <div>• reporter.py</div>
+            <div>• notifier.py</div>
+          </div>
+        </motion.div>
+
+        {/* Config & Utils */}
+        <motion.div 
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          className="col-span-2 bg-slate-800 rounded-lg p-2 text-white"
+        >
+          <div className="text-[9px] font-bold text-amber-400 mb-1">Infrastructure</div>
+          <div className="grid grid-cols-3 gap-2 text-[8px] text-slate-300">
+            <div>
+              <div className="text-amber-400 text-[7px] mb-1">config/</div>
+              <div>• settings.yaml</div>
+              <div>• environments.py</div>
+            </div>
+            <div>
+              <div className="text-amber-400 text-[7px] mb-1">docker/</div>
+              <div>• Dockerfile</div>
+              <div>• docker-compose.yml</div>
+            </div>
+            <div>
+              <div className="text-amber-400 text-[7px] mb-1">ci/</div>
+              <div>• Jenkinsfile</div>
+              <div>• deploy.sh</div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Test Flow */}
+      <div className="bg-slate-100 rounded-lg p-2">
+        <div className="text-[9px] font-bold text-slate-600 mb-1">Execution Flow</div>
+        <div className="flex items-center gap-1 text-[8px] text-slate-500">
+          <span className="bg-green-100 text-green-700 px-1.5 py-0.5 rounded">Trigger</span>
+          <span>→</span>
+          <span className="bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded">Discover</span>
+          <span>→</span>
+          <span className="bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded">Execute</span>
+          <span>→</span>
+          <span className="bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded">Report</span>
+        </div>
+      </div>
+    </div>
+  )
+}
+
