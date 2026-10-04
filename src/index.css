@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  :root {
+    /* Editorial minimal: warm white bg, near-black text, deep ink blue accent */
+    --background: 60 9% 98%;        /* #FAFAF9 warm white */
+    --foreground: 20 14% 10%;       /* #1C1917 near-black */
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 14% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14% 10%;
+
+    --primary: 211 53% 24%;         /* #1E3A5F deep ink blue */
+    --primary-foreground: 60 9% 98%;
+
+    --secondary: 60 5% 96%;
+    --secondary-foreground: 20 14% 10%;
+
+    --muted: 60 5% 96%;
+    --muted-foreground: 25 5% 45%;
+
+    --accent: 60 5% 96%;
+    --accent-foreground: 20 14% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9% 98%;
+
+    --border: 30 6% 90%;            /* stone-200-ish */
+    --input: 30 6% 90%;
+    --ring: 211 53% 24%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "cv01";
+  }
+
+  h1, h2, h3 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  /* Subtle section divider */
+  .section-divider {
+    @apply border-t border-stone-200;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-stone-200 rounded-full;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-stone-300;
+  }
+}
+
+/* Blog article code blocks: dark theme, no white line backgrounds */
+.prose pre {
+  background-color: #1c1917 !important;
+  border: 1px solid #44403c;
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  overflow-x: auto;
+}
+
+.prose pre code {
+  background-color: transparent !important;
+  color: #e7e5e4 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+/* Inline code (not in pre blocks) */
+.prose :not(pre) > code {
+  background-color: #f5f5f4;
+  color: #1c1917;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.375rem;
+  font-size: 0.875em;
+}
+
+/* Blog tables */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+.prose th {
+  background-color: #f5f5f4;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e7e5e4;
+  color: #1c1917;
+}
+
+.prose td {
+  padding: 0.75rem 1rem;
+  border: 1px solid #e7e5e4;
+  color: #57534e;
+}
+
+.prose tr:nth-child(even) td {
+  background-color: #fafaf9;
+}
